@@ -14,7 +14,7 @@ const HomeScreen: React.FC = () => {
   return (
     <main className={styles.cars}>
       <div className={styles.cars__container}>
-        {carData ? carData.map((car: ICarItem) => (<CarTile key={car.id} {...car}/>)) : <h1>'Loading'</h1>}
+        {carData ? carData.map((car: ICarItem) => (<CarTile key={car.id} {...car}/>)) : <h1>Loading</h1>}
       </div>
       <div>
         <button>Scrolling</button>
