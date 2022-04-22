@@ -23,7 +23,7 @@ const Home: React.FC = () => {
       <main>
         <h1>Volvo Page</h1>
         <h3>FILTER BUTTONS HERE IF YOU HAVE TIME</h3>
-        {carData ? carData.map((car: ICarItem) => <CarTile key={car.id} {...car}/>) : 'Loading'}
+        {carData ? carData.map((car: ICarItem) => (<CarTile key={car.id} {...car}/>)) : 'Loading'}
       </main>
     </div>
   )
