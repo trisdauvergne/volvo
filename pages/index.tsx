@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
-import data from '../public/api/cars.json'
+import data from '../public/api/cars.json';
 import styles from '../styles/Home.module.css';
 import { ICarItem } from '../src/interfaces/Car';
 import CarTile from '../src/components/carTile/CarTile';
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 
       <main>
         <h1>Volvo Page</h1>
-        <button>Learn</button>
+        <h3>FILTER BUTTONS HERE IF YOU HAVE TIME</h3>
         {carData ? carData.map((car: ICarItem) => <CarTile key={car.id} {...car}/>) : 'Loading'}
       </main>
     </div>

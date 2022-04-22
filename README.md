@@ -4,6 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - Created a next app with the TypeScript template and installed React and React-router Dom. I am relatively new to NextJS but understand how helpful it is for routing, so created a page for Learn (which would render the car tiles) to see how routing works
 - Added the data files to test rendering the data in the app and created a reusable car tile component to test this
+- Moved on to routing as I knew the product owner had specified we could generate links to learn and shop urls with the product ID
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

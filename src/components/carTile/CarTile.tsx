@@ -1,7 +1,8 @@
 import React from "react";
+import Link from 'next/link';
 import { ICarItem } from "../../interfaces/Car";
 
-const CarTile: React.FC<ICarItem> = (car: ICarItem) => {
+const CarTile: React.FC<ICarItem> = (car) => {
   console.log(car);
 
   if (car) {
@@ -11,6 +12,10 @@ const CarTile: React.FC<ICarItem> = (car: ICarItem) => {
         <p>Body Type: {car.bodyType}</p>
         <p>Model Type: {car.modelType}</p>
         <img src={`${car.imageUrl}`}/>
+        <Link href={`/learn/${car.id}`} key={car.id}>
+          <a>Learn</a>
+        </Link>
+        <a>Shop</a>
       </div>
     )
   } else {
