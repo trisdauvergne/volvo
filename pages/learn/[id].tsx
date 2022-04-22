@@ -14,7 +14,6 @@ const Details: React.FC = () => {
         <Link href={`/`}>
           <a>Home</a>
         </Link>
-        <h1>Car: There's car data</h1>
         <p>{carData.bodyType}</p>
         <p>{carData.modelName} {carData.modelType}</p>
         <img src={`${carData.imageUrl}`} alt={`Image of Volvo ${carData.modelName}`}/>
