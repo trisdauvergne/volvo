@@ -2,7 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Process
 
-- Created a next app with the TypeScript template and installed React and React-router Dom. Created a page for Learn which would render the car tiles
+- Created a next app with the TypeScript template and installed React and React-router Dom. I am relatively new to NextJS but understand how helpful it is for routing, so created a page for Learn (which would render the car tiles) to see how routing works
+- Added the data files to test rendering the data in the app and created a reusable car tile component to test this
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

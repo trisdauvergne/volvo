@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
 import data from '../public/api/cars.json'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+import { ICarItem } from '../src/interfaces/Car';
+import CarTile from '../src/components/carTile/CarTile';
 
 const Home: React.FC = () => {
-  console.log('data: ', data);
+  const [ carData, setCarData ] = useState<ICarItem[]>([]);
+  
+  useEffect(() => {
+    setCarData(data);
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -17,6 +23,7 @@ const Home: React.FC = () => {
       <main>
         <h1>Volvo Page</h1>
         <button>Learn</button>
+        {carData ? carData.map((car: ICarItem) => <CarTile key={car.id} {...car}/>) : 'Loading'}
       </main>
     </div>
   )

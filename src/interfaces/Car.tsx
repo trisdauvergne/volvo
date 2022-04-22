@@ -1,4 +1,4 @@
-export interface ICar {
+export interface ICarItem {
     id: string,
     modelName: string,
     bodyType: string,
