@@ -1,30 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head'
-import data from '../public/api/cars.json';
-import styles from '../styles/Home.module.css';
-import { ICarItem } from '../src/interfaces/Car';
-import CarTile from '../src/components/carTile/CarTile';
+import HomeScreen from '../src/components/homeScreen/HomeScreen';
 
 const Home: React.FC = () => {
-  const [ carData, setCarData ] = useState<ICarItem[]>([]);
-  
-  useEffect(() => {
-    setCarData(data);
-  }, []);
-
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Volvo Test</title>
         <meta name="description" content="Front end code test for Volvo" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        <h1>Volvo Page</h1>
-        <h3>FILTER BUTTONS HERE IF YOU HAVE TIME</h3>
-        {carData ? carData.map((car: ICarItem) => (<CarTile key={car.id} {...car}/>)) : 'Loading'}
-      </main>
+      <HomeScreen />
     </div>
   )
 }

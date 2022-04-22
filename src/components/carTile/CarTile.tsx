@@ -8,14 +8,17 @@ const CarTile: React.FC<ICarItem> = (car) => {
   if (car) {
     return (
       <div>
-        <h1>{car.modelName}</h1>
-        <p>Body Type: {car.bodyType}</p>
-        <p>Model Type: {car.modelType}</p>
-        <img src={`${car.imageUrl}`} alt={`Image of Volvo ${car.modelName}`}/>
+        <p>{car.bodyType}</p>
+        <p>{car.modelName} {car.modelType}</p>
+        <Link href={`/learn/${car.id}`} key={car.id}>
+          <img src={`${car.imageUrl}`} alt={`Image of Volvo ${car.modelName}`}/>
+          </Link>
         <Link href={`/learn/${car.id}`} key={car.id}>
           <a>Learn</a>
         </Link>
-        <a>Shop</a>
+        <Link href={'/'}>
+          <a>Shop</a>
+        </Link>
       </div>
     )
   } else {
