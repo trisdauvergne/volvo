@@ -17,7 +17,7 @@ const Details: React.FC = () => {
         <h1>Car: There's car data</h1>
         <p>{carData.bodyType}</p>
         <p>{carData.modelName} {carData.modelType}</p>
-        <img src={`${carData.imageUrl}`}/>
+        <img src={`${carData.imageUrl}`} alt={`Image of Volvo ${carData.modelName}`}/>
         <Link href={`/`}>
           <a>Shop</a>
         </Link>
@@ -26,7 +26,6 @@ const Details: React.FC = () => {
   } else {
     return <h1>ID {id}</h1>;
   }
-
 };
 
 export default Details;

@@ -11,7 +11,7 @@ const CarTile: React.FC<ICarItem> = (car) => {
         <h1>{car.modelName}</h1>
         <p>Body Type: {car.bodyType}</p>
         <p>Model Type: {car.modelType}</p>
-        <img src={`${car.imageUrl}`}/>
+        <img src={`${car.imageUrl}`} alt={`Image of Volvo ${car.modelName}`}/>
         <Link href={`/learn/${car.id}`} key={car.id}>
           <a>Learn</a>
         </Link>
