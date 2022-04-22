@@ -1,0 +1,33 @@
+@import './fonts';
+@import './color';
+
+.car_tile {
+    display: grid;
+    border: 1px dashed fuchsia;
+    min-width: 25vw;
+    height: 25vw;
+    margin-right: 1.5rem;
+}
+
+.car_tile > div {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    text-transform: uppercase;
+}
+
+.car_tile > div > a {
+    color: $blue;
+    text-decoration: none;
+}
+
+.car_tile > img {
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .car_tile {
+        min-width: 20vw;
+    }
+}
