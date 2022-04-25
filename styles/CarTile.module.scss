@@ -4,9 +4,10 @@
 
 .car_tile {
     display: grid;
+    align-items: start;
     grid-template-rows: 0.5fr 1fr 5fr 1fr;
-    border: 1px dashed fuchsia;
     width: 25vw;
+    margin-top: $standard-gap;
     margin-right: $standard-gap;
 }
 
@@ -19,10 +20,10 @@
     color: black;
 }
 
-.car_tile > div {
+.car_tile__links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     padding: 0 $standard-gap;
     justify-items: center;
     text-transform: uppercase;
@@ -35,11 +36,32 @@
 }
 
 .car_tile > img {
-    width: 100%;
+    width: 25vw;
+    margin-bottom: $standard-gap;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 768px) {
     .car_tile {
-        min-width: 20vw;
+       display: grid;
+       grid-template-rows: 0.3fr 1fr 5fr 1fr;
+       width: 70vw;
+    }
+
+    .car_tile > img {
+        width: 70vw;
+        margin-bottom: 0;
+    }
+
+    .car_tile__modelname::after {
+        content: "\a";
+        white-space: pre;
+    }
+}
+
+@media (max-width: 425px) {
+    .car_tile {
+        display: grid;
+        align-items: start;
+        grid-template-rows: 0.125fr 0.35fr 1.1fr 1fr;
     }
 }

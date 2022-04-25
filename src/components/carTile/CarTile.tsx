@@ -12,7 +12,7 @@ const CarTile: React.FC<ICarItem> = (car) => {
         <Link href={`/learn/${car.id}`} >
           <img src={`${car.imageUrl}`} alt={`Image of Volvo ${car.modelName}`}/>
         </Link>
-        <div>
+        <div className={styles.car_tile__links}>
           <Link href={`/learn/${car.id}`} >
             <a>Learn {'>'}</a>
           </Link>

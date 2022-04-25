@@ -1,3 +1,5 @@
+@import './spacing';
+
 .cars {
     display: grid;
 }
@@ -9,11 +11,31 @@
 }
 
 .cars__chevrons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-left: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cars__chevrons > img {
+    height: 2rem;
+}
+
+.cars__chevrons > img:first-child {
+    margin-right: 0.5rem;
 }
 
 .chevron {
     transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .cars__container {
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        height: 100vh;
+    }
+
+    .cars__chevrons {
+        display: none;
+    }
 }
