@@ -1,24 +1,36 @@
 @import './fonts';
 @import './color';
+@import './spacing';
 
 .car_tile {
     display: grid;
+    grid-template-rows: 0.5fr 1fr 5fr 1fr;
     border: 1px dashed fuchsia;
-    min-width: 25vw;
-    height: 25vw;
-    margin-right: 1.5rem;
+    width: 25vw;
+    margin-right: $standard-gap;
+}
+
+.car_tile > p {
+    color: $grey;
+}
+
+.car_tile__modelname {
+    font-weight: 700;
+    color: black;
 }
 
 .car_tile > div {
     display: grid;
-    grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0 $standard-gap;
     justify-items: center;
     text-transform: uppercase;
 }
 
 .car_tile > div > a {
     color: $blue;
+    font-weight: 500;
     text-decoration: none;
 }
 

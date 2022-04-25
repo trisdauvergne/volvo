@@ -16,8 +16,9 @@ const HomeScreen: React.FC = () => {
       <div className={styles.cars__container}>
         {carData ? carData.map((car: ICarItem, i: number) => (<CarTile key={car.id} {...car}/>)) : <h1>Loading</h1>}
       </div>
-      <div>
-        <button>Scrolling</button>
+      <div className={styles.cars__chevrons}>
+        <img className={styles.chevron} src='../../../docs/chevron-circled.svg' alt="small chevron logo"/>
+        <img className='chevron' src='../../../docs/chevron-circled.svg' alt="small chevron logo"/>
       </div>
     </section>
   )

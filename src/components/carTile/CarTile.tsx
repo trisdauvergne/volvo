@@ -7,17 +7,17 @@ const CarTile: React.FC<ICarItem> = (car) => {
   if (car) {
     return (
       <div className={styles.car_tile}>
-        <p>{car.bodyType}</p>
-        <p>{car.modelName} {car.modelType}</p>
+        <p className={styles.car_tile__bodytype}>{car.bodyType}</p>
+        <p className={styles.car_tile__model}><span className={styles.car_tile__modelname}>{car.modelName}</span> {car.modelType}</p>
         <Link href={`/learn/${car.id}`} >
           <img src={`${car.imageUrl}`} alt={`Image of Volvo ${car.modelName}`}/>
         </Link>
         <div>
           <Link href={`/learn/${car.id}`} >
-            <a>Learn</a>
+            <a>Learn {'>'}</a>
           </Link>
           <Link href={'/'}>
-            <a>Shop</a>
+            <a>Shop {'>'}</a>
           </Link>
         </div>
       </div>
