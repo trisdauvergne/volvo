@@ -6,13 +6,44 @@ import styles from '../../../styles/HomeScreen.module.scss';
 
 const HomeScreen: React.FC = () => {
   const [ carData, setCarData ] = useState<ICarItem[]>([]);
-  
+  const [ showAllButton, setShowAllButton ] = useState<boolean>(false);
+  const [ showFilters, setShowFilters ] = useState<boolean>(false);
+  const [ carBodyTypes, setCarBodyTypes ] = useState<string[]>([]);
+
   useEffect(() => {
     setCarData(data);
   }, []);
 
+  const filterBodyTypes = () => {
+    if (showFilters) {
+      setShowFilters(false);
+    } else {
+      const bodyTypes = carData.map(car => car.bodyType).filter((car, index, self) => self.indexOf(car) === index);
+      setCarBodyTypes(bodyTypes);
+      setShowFilters(true);
+    }
+  }
+
+  const filterCarsByType = (e: any) => {
+    const type = e.target.innerHTML;
+    const filteredData = data.filter(car => car.bodyType === type);
+    setCarData(filteredData);
+    setShowAllButton(true);
+  }
+
+  const resetCars = () => {
+    setCarData(data);
+  }
+
   return (
     <section className={styles.cars}>
+      <div className={styles.cars__filters}>
+        <button onClick={filterBodyTypes}>Filter by body type</button>
+        <div>
+          {showFilters && carBodyTypes && carBodyTypes.map((type: string, i: number) => <button key={i} onClick={e => filterCarsByType(e)}>{type}</button>)}
+          {showAllButton && <button onClick={resetCars}>Reset filter</button>}
+        </div>
+      </div>
       <div className={styles.cars__container}>
         {carData ? carData.map((car: ICarItem) => (<CarTile key={car.id} {...car}/>)) : <h1>Loading</h1>}
       </div>

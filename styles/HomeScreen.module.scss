@@ -4,6 +4,14 @@
     display: grid;
 }
 
+.cars__filters {
+    height: 10vh;
+}
+
+.cars__filters > div {
+    display: flex;
+}
+
 .cars__container {
     display: flex;
     flex-direction: row;
