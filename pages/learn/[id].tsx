@@ -21,7 +21,7 @@ const Details: React.FC = () => {
         <div className={styles.learn__txt}>
           <p>{carData.bodyType}</p>
           <p><span className={styles.learn__modelname}>{carData.modelName}</span> {carData.modelType}</p>
-          <Link href={`/shop`}>
+          <Link href={`/shop/${carData.id}`}>
             <a>Shop {'>'}</a>
           </Link>
         </div>

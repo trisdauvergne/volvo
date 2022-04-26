@@ -32,6 +32,11 @@
     margin-bottom: $standard-gap;
 }
 
+.car_tile > img:hover {
+    cursor: pointer;
+    border: 1px solid $grey;
+}
+
 @media (max-width: 768px) {
     .car_tile {
        display: grid;

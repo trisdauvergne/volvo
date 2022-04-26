@@ -24,10 +24,21 @@ a {
   @include anchortag;
 }
 
+a:hover {
+  font-weight: 600;
+}
+
 button {
   background-color: transparent;
-  border: none;
+  border: 1px solid $grey;
+  border-radius: 25px;
+  padding: 0 $small-gap;
   margin-right: $standard-gap;
+  margin-bottom: $small-gap;
   color: $grey;
   font-size: 1rem;
+}
+
+button:hover {
+  border: 1px solid black;
 }

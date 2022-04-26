@@ -9,13 +9,10 @@
     grid-template-columns: 1.5fr 1fr;
 }
 
-// .learn > a {
-//     @include anchortag;
-// }
-
 .learn__back {
     grid-area: back;
-    align-self: flex-end;
+    position: fixed;
+    top: $standard-gap;
     padding-bottom: $standard-gap;
 }
 
@@ -55,6 +52,7 @@
     }
 
     .learn__img > img {
+        margin-top: 4rem;
         width: 95vw;
     }
 

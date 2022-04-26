@@ -5,7 +5,7 @@
 }
 
 .cars__filters {
-    height: 10vh;
+    height: 15vh;
     padding-top: $standard-gap;
 }
 
@@ -53,7 +53,7 @@
     .cars__container {
         display: flex;
         flex-direction: row;
-        overflow-x: hidden;
+        overflow-x: auto;
         height: 80vh;
     }
 }

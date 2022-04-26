@@ -16,7 +16,7 @@ const CarTile: React.FC<ICarItem> = (car) => {
           <Link href={`/learn/${car.id}`} >
             <a>Learn {'>'}</a>
           </Link>
-          <Link href={'/'}>
+          <Link href={`/shop/${car.id}`}>
             <a>Shop {'>'}</a>
           </Link>
         </div>

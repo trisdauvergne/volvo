@@ -2,9 +2,58 @@
 @import './fonts';
 
 .shop {
-    margin-top: $standard-gap;
+    // margin-top: $standard-gap;
+    display: grid;
+    grid-template-areas: 'back' 'info';
+    align-items: flex-start;
 }
 
-.shop > h1 {
-    @include bold;
+.shop__back {
+    grid-area: back;
+    position: fixed;
+    top: $standard-gap;
+}
+
+.shop__info {
+    display: grid;
+    grid-area: info;
+    grid-template-areas: 'heading heading heading' 'img txt btn';
+}
+
+.shop__info > h1 {
+    grid-area: heading;
+}
+
+.shop__info > img {
+    grid-area: img;
+    width: 30vw;
+}
+
+.shop__txt {
+    grid-area: txt;
+    width: 30vw;
+    @include generictext;
+}
+
+.shop__btn {
+    grid-area: btn;
+}
+
+.shop__modelname {
+    @include modelname;
+}
+
+@media (max-width: 425px) {
+    .shop__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .shop__info > img {
+        width: 95vw;
+    }
+
+    .shop__txt {
+        line-height: $standard-gap;
+    }
 }
