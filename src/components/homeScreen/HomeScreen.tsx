@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import data from '../../../public/api/cars.json';
 import { ICarItem } from '../../interfaces/Car';
 import CarTile from '../carTile/CarTile';
@@ -9,6 +9,7 @@ const HomeScreen: React.FC = () => {
   const [ showAllButton, setShowAllButton ] = useState<boolean>(false);
   const [ showFilters, setShowFilters ] = useState<boolean>(false);
   const [ carBodyTypes, setCarBodyTypes ] = useState<string[]>([]);
+  const ref = useRef(null);
 
   useEffect(() => {
     setCarData(data);
@@ -22,18 +23,37 @@ const HomeScreen: React.FC = () => {
       setCarBodyTypes(bodyTypes);
       setShowFilters(true);
     }
-  }
-
+  };
+  
   const filterCarsByType = (e: any) => {
     const type = e.target.innerHTML;
     const filteredData = data.filter(car => car.bodyType === type);
     setCarData(filteredData);
     setShowAllButton(true);
   }
-
+  
   const resetCars = () => {
     setCarData(data);
+    setShowAllButton(false);
   }
+  
+  const sideScroll = (
+    element: any,
+    speed: number,
+    distance: number,
+    step: number,
+  ) => {
+    let scrollAmount = 0;
+    const slideTimer = setInterval(() => {
+      element.scrollLeft += step;
+      scrollAmount += Math.abs(step);
+      if (scrollAmount >= distance) {
+        clearInterval(slideTimer);
+      }
+    }, speed);
+  };
+
+  const contentWrapper = useRef(null);
 
   return (
     <section className={styles.cars}>
@@ -44,12 +64,16 @@ const HomeScreen: React.FC = () => {
           {showAllButton && <button onClick={resetCars}>Reset filter</button>}
         </div>
       </div>
-      <div className={styles.cars__container}>
+      <div ref={contentWrapper} className={styles.cars__container}>
         {carData ? carData.map((car: ICarItem) => (<CarTile key={car.id} {...car}/>)) : <h1>Loading</h1>}
       </div>
       <div className={styles.cars__chevrons}>
-        <img className={styles.chevron} src='../../../docs/chevron-circled.svg' alt="small chevron logo"/>
-        <img className='chevron' src='../../../docs/chevron-circled.svg' alt="small chevron logo"/>
+        <img onClick={() => {
+            sideScroll(contentWrapper.current, 25, 100, -10);
+        }} className={styles.chevron} src='../../../docs/chevron-circled.svg' alt="small chevron logo"/>
+        <img onClick={() => {
+            sideScroll(contentWrapper.current, 25, 100, 10);
+        }}className='chevron' src='../../../docs/chevron-circled.svg' alt="small chevron logo"/>
       </div>
     </section>
   )
