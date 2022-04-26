@@ -1,4 +1,17 @@
-@import '../styles/spacing';
+@import './spacing';
+@import './fonts';
+
+.learn {
+    display: grid;
+    grid-template-areas: 
+    'back back'
+    'img txt';
+    grid-template-columns: 1.5fr 1fr;
+}
+
+// .learn > a {
+//     @include anchortag;
+// }
 
 .learn__back {
     grid-area: back;
@@ -10,21 +23,27 @@
     grid-area: img;
 }
 
+.learn__img, .learn__img > img {
+    width: 50vw;
+}
+
 .learn__txt {
     grid-area: txt;
     align-self: flex-start;
-}
-
-.learn {
     display: grid;
-    grid-template-areas: 
-    'back back'
-    'img txt';
-    grid-template-columns: 1.5fr 1fr;
 }
 
-.learn__img, .learn__img > img {
-    width: 50vw;
+.learn__txt > a {
+    margin-top: $standard-gap;
+    @include anchortag;
+}
+
+.learn__txt {
+    @include generictext;
+}
+
+.learn__modelname {
+    @include modelname;
 }
 
 @media (max-width: 768px) {
@@ -37,5 +56,9 @@
 
     .learn__img > img {
         width: 95vw;
+    }
+
+    .learn__modelname::after {
+        @include modelname_mobile;
     }
 }

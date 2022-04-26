@@ -1,0 +1,10 @@
+@import './spacing';
+@import './fonts';
+
+.shop {
+    margin-top: $standard-gap;
+}
+
+.shop > h1 {
+    @include bold;
+}

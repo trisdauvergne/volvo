@@ -13,16 +13,16 @@ const Details: React.FC = () => {
     return (
       <main className={styles.learn}>
         <Link href={`/`}>
-          <a className={styles.learn__back}>Back</a>
+          <a className={styles.learn__back}>{'<'} Back</a>
         </Link>
         <div className={styles.learn__img}>
           <img src={`${carData.imageUrl}`} alt={`Image of Volvo ${carData.modelName}`}/>
         </div>
         <div className={styles.learn__txt}>
           <p>{carData.bodyType}</p>
-          <p>{carData.modelName} {carData.modelType}</p>
-          <Link href={`/`}>
-            <a>Shop</a>
+          <p><span className={styles.learn__modelname}>{carData.modelName}</span> {carData.modelType}</p>
+          <Link href={`/shop`}>
+            <a>Shop {'>'}</a>
           </Link>
         </div>
       </main>

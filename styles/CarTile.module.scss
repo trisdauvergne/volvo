@@ -12,12 +12,11 @@
 }
 
 .car_tile > p {
-    color: $grey;
+    @include generictext;
 }
 
 .car_tile__modelname {
-    font-weight: 700;
-    color: black;
+    @include modelname;
 }
 
 .car_tile__links {
@@ -26,13 +25,6 @@
     grid-template-rows: 1fr;
     padding: 0 $standard-gap;
     justify-items: center;
-    text-transform: uppercase;
-}
-
-.car_tile > div > a {
-    color: $blue;
-    font-weight: 500;
-    text-decoration: none;
 }
 
 .car_tile > img {
@@ -53,8 +45,7 @@
     }
 
     .car_tile__modelname::after {
-        content: "\a";
-        white-space: pre;
+        @include modelname_mobile;
     }
 }
 

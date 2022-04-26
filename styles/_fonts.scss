@@ -1,8 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap');
+@import './color';
 
 $font: 'Poppins', sans-serif;
 
 @mixin bold {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
+}
+
+// car model name
+@mixin modelname {
+    font-weight: 700;
+    color: black;
+}
+@mixin modelname_mobile {
+    content: "\a";
+        white-space: pre;
+}
+// general text (don't forget to add line break to learn description in mobile
+@mixin generictext {
+    color: $grey;
+}
+
+// links (anchor tags car tiles learn, and back button on learn page)
+@mixin anchortag {
+    color: $blue;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
 }
