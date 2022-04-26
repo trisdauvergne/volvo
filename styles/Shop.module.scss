@@ -1,8 +1,8 @@
 @import './spacing';
 @import './fonts';
+@import './color';
 
 .shop {
-    // margin-top: $standard-gap;
     display: grid;
     grid-template-areas: 'back' 'info';
     align-items: flex-start;
@@ -10,7 +10,7 @@
 
 .shop__back {
     grid-area: back;
-    position: fixed;
+    position: absolute;
     top: $standard-gap;
 }
 
@@ -27,6 +27,11 @@
 .shop__info > img {
     grid-area: img;
     width: 30vw;
+}
+
+.shop__info > img:hover {
+    border: 1px solid $grey;
+    cursor: pointer;
 }
 
 .shop__txt {

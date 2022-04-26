@@ -11,7 +11,7 @@
 
 .learn__back {
     grid-area: back;
-    position: fixed;
+    position: absolute;
     top: $standard-gap;
     padding-bottom: $standard-gap;
 }

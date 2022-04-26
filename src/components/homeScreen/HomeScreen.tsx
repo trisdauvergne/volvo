@@ -58,7 +58,7 @@ const HomeScreen: React.FC = () => {
   return (
     <section className={styles.cars}>
       <div className={styles.cars__filters}>
-        <button className={!showFilters ? styles.blackbtn : ''} onClick={filterBodyTypes}>Filter by body type</button>
+        <button className={showFilters ? styles.greybtn : ''} onClick={filterBodyTypes}>{!showFilters ? 'Filter by body type' : 'Hide filters'}</button>
         <div>
           {showFilters && carBodyTypes && carBodyTypes.map((type: string, i: number) => <button key={i} onClick={e => filterCarsByType(e)}>{type}</button>)}
           {showAllButton && <button onClick={resetCars}>All</button>}

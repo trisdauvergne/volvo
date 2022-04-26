@@ -30,15 +30,12 @@ a:hover {
 
 button {
   background-color: transparent;
-  border: 1px solid $grey;
+  border: 1px solid black;
   border-radius: 25px;
   padding: 0 $small-gap;
   margin-right: $standard-gap;
   margin-bottom: $small-gap;
-  color: $grey;
+  padding: 0 0.5rem;
+  color: black;
   font-size: 1rem;
-}
-
-button:hover {
-  border: 1px solid black;
 }

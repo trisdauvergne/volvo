@@ -1,4 +1,5 @@
 @import './spacing';
+@import './color';
 
 .cars {
     display: grid;
@@ -9,9 +10,15 @@
     padding-top: $standard-gap;
 }
 
-.blackbtn {
+.greybtn {
+    color: $grey;
+    border: 1px solid $grey;
+}
+
+.greybtn:hover {
     color: black;
-    font-weight: 600;
+    border: 1px solid black;
+    font-weight: 400;
 }
 
 .cars__filters > div {
@@ -23,7 +30,7 @@
 }
 
 .cars__filters > div > button:hover {
-    color: black;
+   font-weight: 500;
 }
 
 .cars__container {

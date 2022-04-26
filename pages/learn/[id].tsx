@@ -13,7 +13,7 @@ const Details: React.FC = () => {
     return (
       <main className={styles.learn}>
         <Link href={`/`}>
-          <a className={styles.learn__back}>{'<'} Back</a>
+          <a className={styles.learn__back}>{'<'} Back to cars</a>
         </Link>
         <div className={styles.learn__img}>
           <img src={`${carData.imageUrl}`} alt={`Image of Volvo ${carData.modelName}`}/>
