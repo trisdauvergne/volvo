@@ -9,7 +9,6 @@ const HomeScreen: React.FC = () => {
   const [ showAllButton, setShowAllButton ] = useState<boolean>(false);
   const [ showFilters, setShowFilters ] = useState<boolean>(false);
   const [ carBodyTypes, setCarBodyTypes ] = useState<string[]>([]);
-  const ref = useRef(null);
 
   useEffect(() => {
     setCarData(data);
@@ -61,7 +60,7 @@ const HomeScreen: React.FC = () => {
         <button onClick={filterBodyTypes}>Filter by body type</button>
         <div>
           {showFilters && carBodyTypes && carBodyTypes.map((type: string, i: number) => <button key={i} onClick={e => filterCarsByType(e)}>{type}</button>)}
-          {showAllButton && <button onClick={resetCars}>Reset filter</button>}
+          {showAllButton && <button onClick={resetCars}>All</button>}
         </div>
       </div>
       <div ref={contentWrapper} className={styles.cars__container}>

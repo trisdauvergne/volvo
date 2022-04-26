@@ -12,3 +12,9 @@ main {
   width: 85vw;
   margin: auto;
 }
+
+@media (max-width: 768px) {
+  main {
+    width: 95vw;
+  }
+}

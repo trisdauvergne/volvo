@@ -1,0 +1,41 @@
+@import '../styles/spacing';
+
+.learn__back {
+    grid-area: back;
+    align-self: flex-end;
+    padding-bottom: $standard-gap;
+}
+
+.learn__img {
+    grid-area: img;
+}
+
+.learn__txt {
+    grid-area: txt;
+    align-self: flex-start;
+}
+
+.learn {
+    display: grid;
+    grid-template-areas: 
+    'back back'
+    'img txt';
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.learn__img, .learn__img > img {
+    width: 50vw;
+}
+
+@media (max-width: 768px) {
+    .learn {
+        grid-template-areas:
+        'back'
+        'img'
+        'txt';
+    }
+
+    .learn__img > img {
+        width: 95vw;
+    }
+}
