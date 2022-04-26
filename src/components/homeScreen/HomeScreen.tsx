@@ -17,6 +17,7 @@ const HomeScreen: React.FC = () => {
   const filterBodyTypes = () => {
     if (showFilters) {
       setShowFilters(false);
+      setShowAllButton(false);
     } else {
       const bodyTypes = carData.map(car => car.bodyType).filter((car, index, self) => self.indexOf(car) === index);
       setCarBodyTypes(bodyTypes);
@@ -57,7 +58,7 @@ const HomeScreen: React.FC = () => {
   return (
     <section className={styles.cars}>
       <div className={styles.cars__filters}>
-        <button onClick={filterBodyTypes}>Filter by body type</button>
+        <button className={!showFilters ? styles.blackbtn : ''} onClick={filterBodyTypes}>Filter by body type</button>
         <div>
           {showFilters && carBodyTypes && carBodyTypes.map((type: string, i: number) => <button key={i} onClick={e => filterCarsByType(e)}>{type}</button>)}
           {showAllButton && <button onClick={resetCars}>All</button>}

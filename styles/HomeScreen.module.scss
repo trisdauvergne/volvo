@@ -6,10 +6,24 @@
 
 .cars__filters {
     height: 10vh;
+    padding-top: $standard-gap;
+}
+
+.blackbtn {
+    color: black;
+    font-weight: 600;
 }
 
 .cars__filters > div {
     display: flex;
+}
+
+.cars__filters > div > button {
+    text-transform: capitalize;
+}
+
+.cars__filters > div > button:hover {
+    color: black;
 }
 
 .cars__container {
@@ -42,8 +56,4 @@
         overflow-x: hidden;
         height: 80vh;
     }
-
-    // .cars__chevrons {
-    //     display: none;
-    // }
 }

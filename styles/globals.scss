@@ -1,4 +1,5 @@
-@import './fonts.scss';
+@import './fonts';
+@import './spacing';
 
 * {
   box-sizing: border-box;
@@ -21,4 +22,12 @@ main {
 
 a {
   @include anchortag;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  margin-right: $standard-gap;
+  color: $grey;
+  font-size: 1rem;
 }

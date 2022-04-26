@@ -8,21 +8,19 @@ $font: 'Poppins', sans-serif;
     font-weight: 600;
 }
 
-// car model name
 @mixin modelname {
     font-weight: 700;
     color: black;
 }
+
 @mixin modelname_mobile {
     content: "\a";
         white-space: pre;
 }
-// general text (don't forget to add line break to learn description in mobile
 @mixin generictext {
     color: $grey;
 }
 
-// links (anchor tags car tiles learn, and back button on learn page)
 @mixin anchortag {
     color: $blue;
     font-weight: 500;
