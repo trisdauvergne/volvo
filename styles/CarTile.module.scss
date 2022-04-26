@@ -40,12 +40,16 @@
     }
 
     .car_tile > img {
-        width: 70vw;
+        width: 60vw;
         margin-bottom: 0;
     }
 
     .car_tile__modelname::after {
         @include modelname_mobile;
+    }
+
+    .car_tile__links {
+        margin-top: $standard-gap;
     }
 }
 
@@ -54,5 +58,11 @@
         display: grid;
         align-items: start;
         grid-template-rows: 0.125fr 0.35fr 1.1fr 1fr;
+    }
+
+    .car_tile__links {
+        margin-top: 0;
+        padding: 0;
+        justify-content: space-evenly;
     }
 }
