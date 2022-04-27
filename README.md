@@ -24,8 +24,13 @@ This test has been deployed to Vercel [here](https://volvo-test.vercel.app/)
 - I began by creating a next app, using the TypeScript template and installed React and react-router-dom. To this new project, I added the data files to test rendering the data in the app and then moved on to creating a reusable car tile component which could be reused for each car
 - By creating a component that would render each car, and needing to pass the car data to the component, I needed to create an interface which could be passed to the component as a type. I did this by copying the structure of the data from the JSON file
 - I moved on to routing as the product owner had specified this. I utilised Next's routing facility for a straightforward method for implementing this
-- When this had been implemented, I started styling the app and decided to use sass. This would help me to make the app more consistent with color, font and sizing variables passed through the app
-- I also started to focus on the responsiveness of the app and decided to use the CSS grid system for this with changes occurring when the screen is under 768px (average tablet size) and some when the screen width is 425px and below
+- When this had been implemented, I started styling the app and decided to use sass as this would help me to make the app more consistent with things such as color, fonts and sizing as variables passed through the app
+- I then started to focus on the responsiveness of the app and decided to use the CSS grid system for this with changes occurring when the screen is under 768px (average tablet size) and some when the screen width is 425px and below
+
+## Challenges
+
+- Responsiveness caused some issues, as I was unsure why some elements which were laid out using the grid system didn't seem to be responding. To try and resolve these issues, I experimented with a lot of options enabled through the grid system to find the solution that solved the problem best
+- I am relatively new to TypeScript so it proposed some challenges in the beginning, such as how to pass props down to components. The solution I found required spreading the prop, but I believe that there is a better practise solution instead
 
 ## Future improvements
 
@@ -33,3 +38,4 @@ This test has been deployed to Vercel [here](https://volvo-test.vercel.app/)
 - The 'HomeScreen' component contains a few features which could be separated out into separate files to make it easier to manage
 - The layout of the learn and shop pages could be improved but this may be because there is not a lot of information to display. If this were a product for real release it would contain more information as well as brand logos to make the page feel more complete
 - A facility to purchase from the shop page
+- If the app were to grow any larger and there were more pages or functionality for a purchase, I would implement a data store where data could be passed easily between pages and stored
